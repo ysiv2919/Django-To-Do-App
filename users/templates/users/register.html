@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <title>To Do | Register</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'libraries/materialize.css' %}">
+        <script src="{% static 'libraries/materialize.js' %}"></script>
+    </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav class="indigo">
+                <div class="nav-wrapper">
+                    <a class="brand-logo center">Register</a>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <form method="POST" class="col s12">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="username" placeholder="Username" required autofocus autocomplete="off">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="email" name="email" placeholder="Email" required autocomplete="off">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="password" name="password1" placeholder="Password" required autocomplete="off">
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="password" name="password2" placeholder="Confirm Password" required autocomplete="off">
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="col s12 center">Already have an account? Log in <a href="/login">here</a>.</p>
+                </div>
+                <div class="row">
+                    <button type="submit" class="col s12 btn waves-effect waves-lighten indigo">Create My Account</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <title>To Do | Home</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'libraries/materialize.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <script src="{% static 'libraries/materialize.js' %}"></script>
+    </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav class="indigo">
+                <div class="nav-wrapper container">
+                    <a class="brand-logo center">To Do</a>
+                    <ul class="right">
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container" col s12>
+            <br>
+            <div class="row">
+                <ul class="collection with-header col s12">
+                    <li class="collection-header"><h4>To Do List</h4></li>
+                    {% for item in items %}
+                    <li class="collection-item">
+                        <div>
+                            {{ item.name }}
+                            <a href="/delete/{{ item.pk }}" class="secondary-content"><i class="material-icons red-text">clear</i></a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    <a href="/new-item" class="collection-item center">New Item</a>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

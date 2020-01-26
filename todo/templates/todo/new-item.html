@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <title>To Do | New Item</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'libraries/materialize.css' %}">
+        <script src="{% static 'libraries/materialize.js' %}"></script>
+    </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav class="indigo">
+                <div class="nav-wrapper">
+                    <a class="brand-logo center">New Item</a>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <form method="POST" class="col s12">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="name" placeholder="Name" class="center" autocomplete="off">
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn waves-effect waves-lighten indigo col s12">Add New Item</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

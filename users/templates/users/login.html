@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        {% load static %}
+        <title>To Do | Log In</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'libraries/materialize.css' %}">
+        <script src="{% static 'libraries/materialize.js' %}"></script>
+    </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav class="indigo">
+                <div class="nav-wrapper">
+                    <a class="brand-logo center">Log In</a>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <form method="POST" class="col s12">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="username" placeholder="Username" required autofocus autocomplete="off">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="password" name="password" placeholder="Password" required autocomplete="off">
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="col s12 center">Don't have an account? Register <a href="/register">here</a>.</p>
+                </div>
+                <div class="row">
+                    <button type="submit" class="btn waves-effect waves-lighten indigo col s12">Log In</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
